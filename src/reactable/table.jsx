@@ -252,7 +252,7 @@ export class Table extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.props.data.length != prevProps.data.length ||
+        if ((this.props.data && prevProps.data && this.props.data.length != prevProps.data.length) ||
             this.props.sortBy != prevProps.sortBy ||
             this.props.currentPage != prevProps.currentPage ||
             this.props.filterBy != prevProps.filterBy ||
