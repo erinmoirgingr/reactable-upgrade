@@ -1461,7 +1461,7 @@ window.ReactDOM["default"] = window.ReactDOM;
                     }).bind(this)));
                 }
 
-                if (this.props.sortable === true) {
+                if (this.props.sortable === true && this._sortable) {
                     for (var i = 0; i < columns.length; i++) {
                         this._sortable[columns[i].key] = 'default';
                     }
