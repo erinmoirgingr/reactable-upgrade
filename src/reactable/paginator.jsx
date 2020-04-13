@@ -1,7 +1,7 @@
 import React from 'react';
 
 function pageHref(num) {
-    return `#page-${num + 1}`;
+    return `#page-${num + 1}`
 }
 
 export class Paginator extends React.Component {
@@ -93,6 +93,7 @@ export class Paginator extends React.Component {
         }
 
         return (
+            <tbody className="reactable-pagination">
                 <tr>
                     <td colSpan={this.props.colSpan}>
                         {this.renderPrevious()}
@@ -100,6 +101,7 @@ export class Paginator extends React.Component {
                         {this.renderNext()}
                     </td>
                 </tr>
+            </tbody>
         );
     }
 };
