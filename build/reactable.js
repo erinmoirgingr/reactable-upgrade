@@ -1283,12 +1283,14 @@ window.ReactDOM["default"] = window.ReactDOM;
             }
         }, {
             key: 'componentDidUpdate',
-            value: function componentDidUpdate() {
-                this.initialize(this.props);
-                this.updateCurrentPage(this.props.currentPage);
-                this.updateCurrentSort(this.props.sortBy);
-                this.sortByCurrentSort();
-                this.filterBy(this.props.filterBy);
+            value: function componentDidUpdate(prevProps, prevState) {
+                if (this.props.data.length != prevProps.data.length || this.props.sortBy != prevProps.sortBy || this.props.currentPage != prevProps.currentPage || this.props.filterBy != prevProps.filterBy || this.state.currentSort != prevState.currentSort) {
+                    this.initialize(this.props);
+                    this.updateCurrentPage(this.props.currentPage);
+                    this.updateCurrentSort(this.props.sortBy);
+                    this.sortByCurrentSort();
+                    this.filterBy(this.props.filterBy);
+                }
             }
         }, {
             key: 'applyFilter',
