@@ -1275,20 +1275,20 @@ window.ReactDOM["default"] = window.ReactDOM;
                 }
             }
         }, {
-            key: 'componentWillMount',
-            value: function componentWillMount() {
+            key: 'componentDidMount',
+            value: function componentDidMount() {
                 this.initialize(this.props);
                 this.sortByCurrentSort();
                 this.filterBy(this.props.filterBy);
             }
         }, {
-            key: 'componentWillReceiveProps',
-            value: function componentWillReceiveProps(nextProps) {
-                this.initialize(nextProps);
-                this.updateCurrentPage(nextProps.currentPage);
-                this.updateCurrentSort(nextProps.sortBy);
+            key: 'componentDidUpdate',
+            value: function componentDidUpdate() {
+                this.initialize(this.props);
+                this.updateCurrentPage(this.props.currentPage);
+                this.updateCurrentSort(this.props.sortBy);
                 this.sortByCurrentSort();
-                this.filterBy(nextProps.filterBy);
+                this.filterBy(this.props.filterBy);
             }
         }, {
             key: 'applyFilter',
