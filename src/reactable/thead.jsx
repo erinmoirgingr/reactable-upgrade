@@ -61,7 +61,7 @@ export class Thead extends React.Component {
             var sortClass = '';
             var thRole = null;
 
-            if (this.props.sortableColumns[column.key]) {
+            if (this.props.sortableColumns && this.props.sortableColumns[column.key]) {
                 sortClass += 'reactable-header-sortable ';
                 thRole = 'button';
             }
