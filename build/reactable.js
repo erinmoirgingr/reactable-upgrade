@@ -980,14 +980,18 @@ window.ReactDOM["default"] = window.ReactDOM;
                 }
 
                 return _react['default'].createElement(
-                    'tr',
-                    null,
+                    'tbody',
+                    { className: 'reactable-pagination' },
                     _react['default'].createElement(
-                        'td',
-                        { colSpan: this.props.colSpan },
-                        this.renderPrevious(),
-                        pageButtons,
-                        this.renderNext()
+                        'tr',
+                        null,
+                        _react['default'].createElement(
+                            'td',
+                            { colSpan: this.props.colSpan },
+                            this.renderPrevious(),
+                            pageButtons,
+                            this.renderNext()
+                        )
                     )
                 );
             }
@@ -1530,7 +1534,11 @@ window.ReactDOM["default"] = window.ReactDOM;
                     'table',
                     props,
                     tableHeader,
-                    currentChildren.length > 0 ? currentChildren : noDataText,
+                    _react['default'].createElement(
+                        'tbody',
+                        { className: 'reactable-data', key: 'tbody' },
+                        currentChildren.length > 0 ? currentChildren : noDataText
+                    ),
                     pagination === true ? _react['default'].createElement(_paginator.Paginator, { colSpan: columns.length,
                         pageButtonLimit: pageButtonLimit,
                         numPages: numPages,
